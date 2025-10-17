@@ -47,4 +47,5 @@ public class Wallet {
     public void credit(BigDecimal amount) {
         balance = balance.add(amount);
     }
+
 }
