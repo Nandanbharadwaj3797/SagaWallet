@@ -1,4 +1,5 @@
 package com.example.shardedsagawallet.services.saga.steps;
+
 import java.math.BigDecimal;
 
 import org.springframework.stereotype.Service;
@@ -6,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.example.shardedsagawallet.entities.Wallet;
 import com.example.shardedsagawallet.repositories.WalletRepository;
 import com.example.shardedsagawallet.services.saga.SagaContext;
-import com.example.shardedsagawallet.services.saga.SagaStep;
+import com.example.shardedsagawallet.services.saga.SagaStepInterface;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CreditDestinationWalletStep implements SagaStep {
+public class CreditDestinationWalletStep implements SagaStepInterface {
 
     private final WalletRepository walletRepository;
 
