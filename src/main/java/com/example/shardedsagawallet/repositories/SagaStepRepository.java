@@ -16,6 +16,8 @@ public interface SagaStepRepository extends JpaRepository<SagaStep, Long> {
 
     List<SagaStep> findBySagaInstanceIdAndStatus(Long sagaInstanceId, StepStatus status);
 
+    Optional<SagaStep> findBySagaInstanceIdAndStepNameAndStatus(Long sagaInstanceId, String stepName, StepStatus status);
+
     @Query("SELECT s FROM SagaStep s WHERE s.sagaInstanceId = :sagaInstanceId AND s.status = 'COMPLETED'")
     List<SagaStep> findCompletedStepsBySagaInstanceId( @Param("sagaInstanceId") Long sagaInstanceId );
 
